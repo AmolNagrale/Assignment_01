@@ -116,12 +116,237 @@
 
 #=======================================================================
 
-s = 'abcdefghijk'
-for i in s:
-    #if i%2==0:
-    print(i)
+#WAP for following requirement
+# '''input = a4b3c2    output = aaaabbbcc'''
+# 
+# #s = "A4B3C2"
+# s = input("Enter the required sequence :")
+# output = '' # for this type of programs we need to assign empty string for storing the output
+# for ch in s:
+#     if ch.isalpha(): # for sorting alphabets from given string
+#         x = ch
+#     else:
+#         d = int(ch) # str*str this operation not performed hence we need to convert this into 'int'
+#         output = output + x*d
+# print(output)
 
+# alternate way :- if we want output in sorted way abc.....z 
 
-         
+# s = input("Enter a string as per expectation :")
+# target = ''
+# for ch in s:
+#     if ch.isalpha():
+#         x = ch
+#     else:
+#         d = int(ch)
+#         target = target + x*d
+# output = ''.join(sorted(target))
+# print(output)
 
+#=========================================================================
+# WAP for sorted output on given string
+
+# s = input("Enter a string as per expectation :")
+# target = ''
+# for ch in s:
+#     if ch.isalpha():
+#         x = ch
+#     else:
+#         d = int(ch)
+#         target = target + x*d
+# output = ''.join(sorted(target))
+# print(output)
+
+#=============================================================================
+# WAP to sorted output on below pattern
+# input = 'aaaabbbccz'  output = 4a3b2c1z
+
+# s = 'aaaabbbccz'
+# previews = s[0] # to store indexing valu of s
+# output = ''     # for storing output value
+# c = 1   # initial count value
+# i = 1   # initial iterate value
+# while i <len(s): # condition for comparing lenght of string
+#     if s[i] == previews: # for compare condition initial string value == previews store value
+#         c = c+1      # if condition is satisfied increament the count value by 1
+#     else:
+#         output = output + str(c)+previews # for storing output value + string of count value + indexing value
+#         previews = s[i] # for index of string
+#         c=1    # condition after iniatizing value
+#     if i == len(s)-1:  # condition for storing last value in output
+#         output = output + str(c)+previews 
+#     i = i + 1 # for count increamented by one 
+# print(output)
+
+#============================================================================
+
+#WAP for following requirements
+# input = a4k3b2 output = aeknbd
+# s = input("Enter the required string : ")
+# #s = 'a4k3b2'
+# output = ''    # for stornig output
+# for ch in s:    # condition for iteration
+#     if ch.isalpha(): # if charecter is present in output then store into output
+#         output = output+ ch 
+#         x = ch     # to store ch in x for further comparision
+#     else:
+#         d = int(ch)   # typecast ch into int 
+#         newc = chr(ord(x)+d) # to convert unicode of charecter & add with int value & store it in newc
+#         output = output+newc # final value store in output
+# print(output)
+
+#==============================================================================
+
+# WAP to remove duplicate charecters from string
+
+# 1st way
+
+# s = 'AAASDDEFFDDRRG'
+# output = ''
+# for ch in s:
+#     if ch not in output:
+#         output = output + ch
+# print(output)
+# 
+# # 2nd way
+# 
+# s = input("Enter a string :")
+# l = []
+# for ch in s:
+#     if ch not in l:
+#         l.append(ch) # append is method of list only
+#     #output = ''.join(l)
+# print(l)
+
+# 3rd way using set ---for this approche we need to individual charecters in string
+
+# s = 'aaddccffeeggbbgfsff'
+# s1 = set (s)
+# output = ''.join(s1)
+# print(output) # duplicates are remove but order of string is no garentee 
+
+#=============================================================================
+
+# WAP to find the numbers of occurance in given string
+
+# 1st way
+
+# s = 'aabbbbbggtttttddd'
+# l = []
+# for ch in s:
+#     if ch not in l:
+#         l.append(ch)
+# for ch in sorted(l):
+#     print('{} occurance {} times'.format(ch,s.count(ch)))
+
+# 2nd way
+
+# s = 'dddffrrddbbaa'
+# s1 = set(s)
+# print(s1)
+# for ch in sorted(s1): # sorted is for arranging the sequence of string
+#     print('{} occurs {} times'.format(ch,s.count(ch)))
+#     
+#=============================================================================
+
+# d = {}
+# d['A'] = 100
+# d['B'] = 200
+# d['A'] = 300
+# print(d.get('A'))
+# print(d.get('Z'))
+# print(d.get('Z',0))
+# print(d)
+
+# d = {'A':100,'Z':200,'C':400,'B':500}
+# 
+# for k,v in d.items():
+#     print(k,v)
+
+# WAP for occurance without using count()
+
+#     s = 'AABBBZZZZZDDDDDVVVVVFFFFFFF'
+#     d = {}
+#     for ch in s:
+#         d[ch] = d.get(ch,0)+1
+#     for k,v in (sorted(d.items())):
+#         print('{} occurs {} times'.format(k,v))
+#         
+#============================================================================
     
+# WAP using dict following below requirement
+# input = 'ABAABBCA' output = 4A3B1C
+
+# s = input("Enter a required string :")
+# #s = 'ABAABBCA'
+# d = {}
+# for ch in s:
+#     d[ch] = d.get(ch,0)+1 
+# #print(d)
+# output = ''
+# for k,v in d.items():
+#     output = output + str(v) + k # for we want required output in digit followed by charecter
+# print(output)
+
+#=============================================================================
+
+# WAP find number of occurances of each value present in the given string
+
+# s = input("Enter a input string :") # for dynamic input 
+# #s = 'DURGASOFTWARE'
+# v = {'a','e','i','o','u','A','E','I','O','U'}
+# d = {}
+# for ch in s:
+#     if ch in v:
+#         d[ch] = d.get(ch,0)+1
+# #print(d)
+# for k,v in sorted(d.items()):
+#     print('{} occurs {} times '.format(k,v))
+
+#==============================================================================
+
+# WAP two strings are said to be anagram if both are having same content irrespective of charecters position
+
+# s1 = input("Enter first string : ")
+# s2 = input("Enter second string : ")
+# if (sorted(s1))==(sorted(s2)):
+#     print("both string are anagrams of each others")
+# else:
+#     print("both strings are not anagram of each others")
+
+#==============================================================================
+    
+# WAP to check given string is palindrome
+
+# s = input("Enter any string :")
+# if s == s[::-1]:
+#     print("A given string is palindrome")
+# else:
+#     print("A given string is not palindrome")
+
+#==============================================================================
+    
+# WAP to generate a word by using input strings by taking charecters alternately
+
+s1 = 'abcdefghij'
+s2 = 'xyz'
+s3 = '12345'
+i=j=k=0
+while i<len(s1) or j<len(s2) or k<len(s3):
+    output = ''
+    if i<len(s1):
+        output = output+s1[i]
+        i = i+1
+    if j<len(s2):
+        output = output+s2[j]
+        j = j+1
+    if k<len(s3):
+        output = output+s3[k]
+        k = k+1
+    print(output, end=' ')
+
+#===============================================================================
+    
+
+
+
